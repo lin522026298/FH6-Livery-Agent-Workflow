@@ -25,8 +25,10 @@
     "url": "https://github.com/lin522026298/FH6-Livery-Agent-Workflow/releases/download/v1.3.0/optimizer_seed-win-x64.zip",
     "source": "scripts/optimizer_seed.cpp",
     "build": "g++ -O3 -std=c++17 -static -o optimizer_seed.exe scripts/optimizer_seed.cpp",
-    "sha256": "4ef26889b9c8359e58fdbdf08f7d18baf9fbc356ac31b0b2bad5872003aaa86d",
-    "bytes": 628108,
-    "sourceSha256": "dd0cf345093a04e7d6729438e1f00a997f588ef8a91d244202f34e2c2a2c8605"
+    "sha256": "31445eebb56cfe67068310f92835ecab2e5d3be16586f121923340e93b471394",
+    "bytes": 628110,
+    "sourceSha256": "dd0cf345093a04e7d6729438e1f00a997f588ef8a91d244202f34e2c2a2c8605",
+    "buildCommit": "991cee2516f16db1eb64d3e0bb30dde0f0b460bb",
+    "buildRun": "https://github.com/lin522026298/FH6-Livery-Agent-Workflow/actions/runs/41821450144"
   }
 }

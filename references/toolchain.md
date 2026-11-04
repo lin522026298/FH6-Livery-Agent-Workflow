@@ -13,7 +13,7 @@
 |[Forza Livery Studio](https://github.com/Arstz/ForzaLiveryStudio) 1.3.0|可编辑工程、用户拼贴、小贴纸库|用户端默认1.3.0；核验实际进程路径；AI生产一般不启动GUI|
 |[FH6-Background-Preview](https://github.com/lin522026298/FH6-Background-Preview) / FH6Preview 1.0.0|离屏实际车模、多机位、原生涂装检查|自用后发布的工具；调用现有 `fh6-livery-preview` 技能或隐藏子进程，无系统输入；效果仍为FLS参考渲染|
 |本技能 `geometry.py` + 限定Frida观察桥|原始遮罩、UV索引三角形、世界坐标、车窗续贴规划|仅观察自己新建的离屏renderer；不附加游戏；协议与已核对renderer哈希绑定|
-|FH6 Livery Workbench 0.2.1编解码/安装模块|私人原生header/C_livery、完整备份和本地导入|本项目自用工具；随技能提供更新源码与PowerShell清理助手，项目级滚动留一份、失败/损坏暂停；默认追加，不自行发布|
+|[FH6 Livery Workbench](https://github.com/lin522026298/FH6-Livery-Workbench) 0.3.0|自制作品转换、校验、完整备份、本地导入和读回|无界面CLI与对应源码、模块清单和PowerShell清理助手；项目级滚动留一份、失败/损坏暂停；默认追加，不自行发布|
 |本技能 `custom.py` + 用户上下文桥|真实FLS进程中的Custom按ID合并/替换|限定注册表值、备份、CAS与同上下文读回；不关闭编辑器，面板可见由用户重载确认|
 |Python、NumPy、Pillow、OpenCV、Frida|可重复图像采样、数据和受限进程接口|独立虚拟环境；记录实际版本。不得把模型生图篡改成纯脚本手绘人物|
 
