@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "version": "0.3.0",
+  "sourceRepository": "https://github.com/lin522026298/FH6-Livery-Workbench",
+  "modules": [
+    "__init__.py",
+    "__main__.py",
+    "backup_retention.py",
+    "cli.py",
+    "container_codec.py",
+    "delete_backup_archives.ps1",
+    "errors.py",
+    "header_codec.py",
+    "installer.py",
+    "process_guard.py",
+    "project3so.py",
+    "readback.py",
+    "save_scan.py",
+    "staging.py",
+    "util.py"
+  ],
+  "commands": [
+    "convert-painter",
+    "validate-project",
+    "validate-native",
+    "stage",
+    "backup",
+    "backup-policy",
+    "validate-ready",
+    "dry-run-install",
+    "install",
+    "readback",
+    "rollback"
+  ],
+  "files": {
+    "backup_retention.py": "86d3c921d4cfee89d25842203cd094a748459887015237fd7c6fa770ec7c3b77",
+    "cli.py": "7abf1c32b2b3f31366301d194f5ef72026fca1df2ccaa9af049ce64d50a23ef1",
+    "container_codec.py": "7d49c5658f1f98c24f137a9dc8199c494521dd6e1daf42b02fcd9734ecc6bb75",
+    "delete_backup_archives.ps1": "f85c77518b72b75b3fa6c30212e08447a40ea1f68307f470f470ff03558ca6cf",
+    "errors.py": "3da41ba04cd0f6c663e7191e6973f66339f499a9c4f5e68d6ce17ace4875212e",
+    "header_codec.py": "74e0c7f073f2f1428c3a2cb8f4551b173441744fc38eb5f7b702a60dbe6095d7",
+    "installer.py": "7ce5ee1de2c3dcded162a0624c1238c5e442d18104808145107ae7ec9f9541e0",
+    "process_guard.py": "597b9c32e6eec7ef0592634c82de0c3c44f3386911dfb500d7f29c9a2d9bc1e8",
+    "project3so.py": "5a46d1eb16a6bba4f26a2d37b05c228f77b615e017e4b6684f68fd739f008fba",
+    "readback.py": "d3438e180e917014b84c0d999bc749bea786b036ec1cad75e27caaef80c75e9a",
+    "save_scan.py": "6cb8119c99e2ad4e3a74faa153292e8235fb8af527a12ccecc2f0c65703f28bb",
+    "staging.py": "900870fbbb69669e7dec4c44ee72dc5bfdaffe2b1ef05e691a8103a0f109cc8a",
+    "util.py": "91625ec6c505b57bb6dcb201440ad454175c2b0e8798449495a5212bbb0808c9",
+    "__init__.py": "fe162ff41b29d0cfca024d893872198b6341b3e59b7868ae0256dd4da0b9c30e",
+    "__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d"
+  }
+}

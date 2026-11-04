@@ -1,0 +1,6 @@
+interface:
+  display_name: "FH6 自然语言涂装工作流"
+  short_description: "从主题与参考图完成整车设计、跨面拟合、独立贴纸和离屏检查，支持按自然语言持续返工"
+  default_prompt: "使用 $fh6-livery-workflow 为指定车型和主题制作可编辑涂装，先给预览方案，再按反馈持续改进。"
+policy:
+  allow_implicit_invocation: true

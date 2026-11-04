@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "supportedPlatform": "windows-x86_64",
+  "python": "3.12.11",
+  "uv": {
+    "version": "0.13.7",
+    "url": "https://github.com/astral-sh/uv/releases/download/0.13.7/uv-x86_64-pc-windows-msvc.zip",
+    "sha256": "0cdc5b38fe5a8168ed6a25814f5ba43c21d313dd3187314fccb37b7cec46e021",
+    "bytes": 15236317
+  },
+  "fls": {
+    "version": "1.3.0",
+    "url": "https://github.com/Arstz/ForzaLiveryStudio/releases/download/1.3.0/windows_x64.zip",
+    "sha256": "fa9a2a96d0f127d68936434db60dcee391a6aedfca8a20091e6bd5052ba9ce16",
+    "bytes": 48950674
+  },
+  "preview": {
+    "version": "v1.0.0",
+    "url": "https://github.com/lin522026298/FH6-Background-Preview/releases/download/v1.0.0/FH6Preview-1.0.0-win-x64.zip",
+    "sha256": "38b1aae4d3d9296347f9914e54da8a0699fe3d799c2ad40f9051bf8539a7d35f",
+    "bytes": 23090511
+  },
+  "optimizer": {
+    "version": "1.3.0",
+    "url": "https://github.com/lin522026298/FH6-Livery-Agent-Workflow/releases/download/v1.3.0/optimizer_seed-win-x64.zip",
+    "source": "scripts/optimizer_seed.cpp",
+    "build": "g++ -O3 -std=c++17 -static -o optimizer_seed.exe scripts/optimizer_seed.cpp",
+    "sha256": "4ef26889b9c8359e58fdbdf08f7d18baf9fbc356ac31b0b2bad5872003aaa86d",
+    "bytes": 628108,
+    "sourceSha256": "dd0cf345093a04e7d6729438e1f00a997f588ef8a91d244202f34e2c2a2c8605"
+  }
+}

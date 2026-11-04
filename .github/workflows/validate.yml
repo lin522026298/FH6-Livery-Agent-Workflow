@@ -1,0 +1,53 @@
+name: clean-windows-validation
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Build optimizer from corresponding source
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Path dist -Force | Out-Null
+          $compiler = Get-Command g++ -ErrorAction SilentlyContinue
+          if (-not $compiler) {
+            $env:PATH = 'C:\msys64\mingw64\bin;' + $env:PATH
+            $compiler = Get-Command g++ -ErrorAction Stop
+          }
+          & $compiler.Source -O3 -std=c++17 -static -o dist/optimizer_seed.exe scripts/optimizer_seed.cpp
+          if ($LASTEXITCODE -ne 0) { throw 'Source build failed' }
+          'CXX=' + $compiler.Source | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+      - name: Bootstrap isolated dependencies and run synthetic native tests
+        shell: pwsh
+        run: |
+          & powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -File ./bootstrap.ps1 -ToolsRoot (Join-Path $env:RUNNER_TEMP 'livery-tools') -Workspace (Join-Path $env:RUNNER_TEMP 'livery-projects') -Optimizer (Join-Path $PWD 'dist/optimizer_seed.exe') -Dev
+          if ($LASTEXITCODE -ne 0) { throw 'Classic Windows PowerShell bootstrap failed' }
+      - name: Regression and setup boundary tests
+        shell: pwsh
+        run: |
+          $config = Get-Content -LiteralPath .local/installation.json -Raw | ConvertFrom-Json
+          & $config.runtimePython -m pytest --basetemp (Join-Path $env:RUNNER_TEMP 'livery-pytest')
+          if ($LASTEXITCODE -ne 0) { throw 'Regression failed' }
+      - name: Privacy audit and corresponding-source optimizer package
+        shell: pwsh
+        run: |
+          $config = Get-Content -LiteralPath .local/installation.json -Raw | ConvertFrom-Json
+          & $config.runtimePython scripts/audit_publication.py
+          if ($LASTEXITCODE -ne 0) { throw 'Source privacy audit failed' }
+          & $config.runtimePython scripts/package_optimizer.py --binary dist/optimizer_seed.exe --output dist/optimizer_seed-win-x64.zip --compiler $env:CXX
+          if ($LASTEXITCODE -ne 0) { throw 'Optimizer packaging failed' }
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: optimizer-seed-win-x64
+          path: dist/optimizer_seed-win-x64.zip
+          if-no-files-found: error
+          retention-days: 7

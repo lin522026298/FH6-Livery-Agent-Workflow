@@ -1,0 +1,28 @@
+name: Workflow or installation issue
+description: Report a reproducible setup, fitting, projection or import problem without private data.
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Release / commit and operating system
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Request and expected result
+      description: Include exact vehicle/year/variant and relevant budgets if applicable.
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed result and sanitized evidence
+      description: Only share publishable screenshots or synthetic fixtures. Remove personal paths/IDs; do not upload saves, identity headers, Custom dumps or keys.
+    validations:
+      required: true
+  - type: textarea
+    id: interaction
+    attributes:
+      label: Visual feedback and changes attempted
+      description: For design issues, describe reference/likeness/composition defects and which review round this is. Technical PASS alone is not visual acceptance.
